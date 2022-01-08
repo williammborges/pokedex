@@ -7,9 +7,9 @@ import 'package:pokedex/common/widgets/po_loading.dart';
 import 'package:pokedex/features/pokedex/screens/details/pages/detail_page.dart';
 
 class DetailArguments {
-  final String name;
+  final Pokemon pokemon;
 
-  DetailArguments({required this.name});
+  DetailArguments({required this.pokemon});
 }
 
 class DetailContainer extends StatelessWidget {
@@ -35,7 +35,7 @@ class DetailContainer extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done &&
             snapshot.hasData) {
           return DetailPage(
-            name: arguments.name,
+            pokemon: arguments.pokemon,
             list: snapshot.data!,
           );
         }
